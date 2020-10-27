@@ -1,1 +1,1 @@
-npx create-react-app my-app --template redux
+npx create-react-app front-end --template redux

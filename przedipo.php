@@ -68,7 +68,7 @@ add_action('wp_enqueue_scripts', function () {
 /**
  * Shortcode
  */
-add_shortcode('przedipo_app', function ($args) {
+add_shortcode(PLUGIN_NAME_SLUG . '-app', function ($args) {
     return '<div id="'. PLUGIN_NAME_SLUG .'-root" data-userid="' .
         get_current_user_id() .
         '" data-wpnonce="' .
@@ -81,7 +81,7 @@ add_shortcode('przedipo_app', function ($args) {
  */
 
 add_action('rest_api_init', function () {
-    register_rest_route( PLUGIN_NAME_SLUG . '/v1', '/account', [
+    register_rest_route( PLUGIN_NAME_SLUG . '/v1', '/something', [
         'methods' => 'POST',
         'callback' => function (WP_REST_Request $request) {
             return wp_send_json([]);
