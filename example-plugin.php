@@ -24,7 +24,7 @@ if(DEV_MODE) {
 
 add_action('wp_enqueue_scripts', function () {
     $manifest = file_get_contents(
-        PLUGIN_PLUGIN_URL . 'app/build/asset-manifest.json'
+        PLUGIN_PLUGIN_URL . 'front-end/build/asset-manifest.json'
     );
     $manifest = (array) json_decode($manifest);
     $files = (array) $manifest['entrypoints'];
@@ -72,7 +72,7 @@ add_shortcode(PLUGIN_NAME_SLUG . '-app', function ($args) {
     return '<div id="'. PLUGIN_NAME_SLUG .'-root" data-userid="' .
         get_current_user_id() .
         '" data-wpnonce="' .
-        wp_create_nonce('przedipo_add_new_user') .
+        wp_create_nonce(PLUGIN_NAME_SLUG) .
         '"></div>';
 });
 
