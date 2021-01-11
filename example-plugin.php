@@ -12,9 +12,10 @@ License: Business
 define('PLUGIN_VERSION', '1.0.0');
 define('PLUGIN_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('PLUGIN_NAME', 'MyApp'); // without spaces
-define('PLUGIN_NAME_SLUG', 'my-app'); // without spaces
+define('PLUGIN_NAME_SLUG', 'my_app'); // without spaces
 define('DEV_MODE', true);
 
+require_once 'back-end/utils/dump.php';
 
 if(DEV_MODE) {
     error_reporting(-1);
